@@ -2,6 +2,17 @@ import express from "express";
 import cors from "cors";
 import { createServer } from "http";
 import { Server } from "socket.io";
+
+const allow = (process.env.CORS_ORIGINS || "*")
+  .split(",")
+  .map(s => s.trim());
+
+app.use(cors({ origin: allow }));
+const httpServer = createServer(app);
+const io = new Server(httpServer, { cors: { origin: allow } });
+
+import { createServer } from "http";
+import { Server } from "socket.io";
 import fs from "fs";
 
 const app = express();
