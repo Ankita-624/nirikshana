@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About • Nirikshana (Vanilla)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner container">
+      <div class="brand">Nirikshana</div>
+      <nav class="nav">
+        <a href="./index.html">Dashboard</a>
+        <a href="./about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="margin:12px 0 8px; font-size:28px;">About Nirikshana</h1>
+
+    <div class="grid">
+      <div class="card">
+        <h2 style="margin:0 0 8px;">Problem</h2>
+        <p class="small">
+          Water bodies face rising pollution; current monitoring is slow, manual, and lab-dependent.
+          Communities and authorities need fast, low-cost, real-time visibility.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 8px;">Solution</h2>
+        <p class="small">
+          Low-cost IoT sensor stations stream multi-parameter data (pH, turbidity, TDS, temperature, DO)
+          to a backend that classifies status and raises alerts. A public dashboard shows live pins, KPIs, and station history.
+        </p>
+      </div>
+
+      <div class="card">
+        <h2 style="margin:0 0 8px;">End-to-End Pipeline</h2>
+        <ol class="small" style="padding-left:18px; line-height:1.6;">
+          <li>Edge capture (ESP32 + sensors) → timestamp, basic preprocessing.</li>
+          <li>Ingest API (HTTP/MQTT) → storage (time-series DB).</li>
+          <li>Classification/thresholds → alerting.</li>
+          <li>Dashboard (map, KPIs, charts) + CSV export.</li>
+        </ol>
+      </div>
+
+
+      <div class="card">
+        <h2 style="margin:0 0 8px;">Stakeholders & Impact</h2>
+        <p class="small">
+          Water Resources Dept., Environmental Agencies, Researchers, Communities.
+          Benefits: faster detection & response, transparency, and scalable coverage.
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer container">
+    © <span id="year"></span> Recyclopaths • Nirikshana
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

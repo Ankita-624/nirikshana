@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <link rel="icon" href="./favicon.ico">
+  <title>Nirikshana - Dashboard (Vanilla)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script defer src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Socket.IO client -->
+  <script defer src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <!-- App helpers -->
+  <script defer src="./js/app.js"></script>
+  <!-- Page script -->
+  <script defer src="./js/index.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner container">
+      <div class="brand">Nirikshana</div>
+      <nav class="nav">
+        <a href="./index.html">Dashboard</a>
+        <a href="./about.html">About</a>
+         <button id="export-24h" class="badge" type="button">Export 24h CSV</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="margin:12px 0 8px; font-size:28px;">Dashboard</h1>
+
+    <!-- KPIs -->
+    <div class="grid grid-3">
+      <div class="card kpi"><div class="val" id="kpi-stations">—</div><div class="lbl">Active Stations</div></div>
+      <div class="card kpi"><div class="val" id="kpi-alerts">—</div><div class="lbl">Today’s Alerts</div></div>
+      <div class="card kpi"><div class="val" id="kpi-uptime">—</div><div class="lbl">Uptime</div></div>
+    </div>
+
+    <div class="grid grid-3" style="margin-top:16px;">
+      <!-- Map -->
+      <div class="card">
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:8px;">
+          <div style="font-weight:600">Station Map</div>
+          <div class="small">Pins: <span style="color:green">Safe</span>, <span style="color:orange">Caution</span>, <span style="color:red">Unsafe</span></div>
+        </div>
+        <div id="map" class="map-wrap"></div>
+      </div>
+
+      <!-- Alerts -->
+      <div class="card">
+        <div style="font-weight:600; margin-bottom:8px;">Recent Alerts</div>
+        <div id="alerts" class="list"></div>
+      </div>
+
+      <!-- How it works -->
+      <div class="card">
+        <div style="font-weight:600; margin-bottom:8px;">How it works</div>
+        <ol class="small" style="padding-left:18px; line-height:1.6;">
+          <li>IoT stations stream metrics (mocked).</li>
+          <li>Backend evaluates thresholds and emits alerts.</li>
+          <li>UI updates KPIs, map colors, and alerts in real time.</li>
+        </ol>
+        <div class="small" style="margin-top:8px;">API: <code id="api-url"></code></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer container">
+    © <span id="year"></span> Recyclopaths • Nirikshana
+  </footer>
+</body>
+</html>

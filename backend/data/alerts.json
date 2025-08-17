@@ -1,0 +1,13 @@
+[
+  {
+    "id": "al-1001",
+    "stationId": "st-02",
+    "level": "high",
+    "metric": "turbidity",
+    "value": 8.1,
+    "threshold": 6,
+    "message": "Turbidity spike",
+    "ts": "2025-08-17T07:18:00Z",
+    "resolved": false
+  }
+]

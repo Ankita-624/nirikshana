@@ -1,0 +1,29 @@
+[
+  {
+    "id": "st-01",
+    "name": "Mahanadi – Point A",
+    "coords": { "lat": 20.50, "lng": 85.86 },
+    "waterBody": "river",
+    "params": ["pH","turbidity","tds","temp","do"],
+    "status": "safe",
+    "lastReadingAt": "2025-08-17T07:20:00Z"
+  },
+  {
+    "id": "st-02",
+    "name": "Mahanadi – Point B",
+    "coords": { "lat": 20.49, "lng": 85.89 },
+    "waterBody": "river",
+    "params": ["pH","turbidity","tds","temp","do"],
+    "status": "caution",
+    "lastReadingAt": "2025-08-17T07:19:40Z"
+  },
+  {
+    "id": "st-03",
+    "name": "Kathajodi – Junction",
+    "coords": { "lat": 20.48, "lng": 85.87 },
+    "waterBody": "river",
+    "params": ["pH","turbidity","tds","temp","do"],
+    "status": "safe",
+    "lastReadingAt": "2025-08-17T07:18:22Z"
+  }
+]

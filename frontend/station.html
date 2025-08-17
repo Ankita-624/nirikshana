@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Station • Nirikshana (Vanilla)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="./styles.css" />
+  <!-- Chart.js -->
+  <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <!-- Socket.IO -->
+  <script defer src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+  <!-- App helpers -->
+  <script defer src="./js/app.js"></script>
+  <!-- Page script -->
+  <script defer src="./js/station.js"></script>
+</head>
+<body>
+  <header class="header">
+    <div class="header-inner container">
+      <div class="brand">Nirikshana</div>
+      <nav class="nav">
+        <a href="./index.html">Dashboard</a>
+        <a href="./about.html">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+  <a class="back" href="./index.html">← Back</a>
+
+  <div style="margin-top:8px; display:flex; flex-wrap:wrap; gap:8px; align-items:center">
+    <button id="dl-csv" class="badge" type="button">Download CSV</button>
+    <span class="small">Range:</span>
+    <input id="from" type="datetime-local" class="badge" />
+    <span class="small">to</span>
+    <input id="to" type="datetime-local" class="badge" />
+    <button id="apply-range" class="badge" type="button">Apply</button>
+  </div>
+
+  <h1 id="st-name" style="margin:12px 0 0; font-size:22px;">Station</h1>
+  <div class="small">Status: <b id="st-status"></b></div>
+
+  <div class="row" style="margin-top:16px;">
+    <div class="card">
+      <div style="font-weight:600; margin-bottom:8px;">pH / Turbidity</div>
+      <canvas id="chartA" height="220"></canvas>
+    </div>
+    <div class="card">
+      <div style="font-weight:600; margin-bottom:8px;">TDS / Temp / DO</div>
+      <canvas id="chartB" height="220"></canvas>
+    </div>
+  </div>
+</main>
+
+
+  <footer class="footer container">
+    © <span id="year"></span> Recyclopaths • Nirikshana
+  </footer>
+</body>
+</html>
