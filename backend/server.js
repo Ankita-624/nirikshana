@@ -2,14 +2,14 @@ import express from "express";
 import cors from "cors";
 import { createServer } from "http";
 import { Server } from "socket.io";
+import fs from "fs";
 
-const allow = (process.env.CORS_ORIGINS || "*")
-  .split(",")
-  .map(s => s.trim());
+const app = express();
+app.use(cors());
+app.use(express.json());
 
-app.use(cors({ origin: allow }));
 const httpServer = createServer(app);
-const io = new Server(httpServer, { cors: { origin: allow } });
+const io = new Server(httpServer, { cors: { origin: "*" } });
 
 // --- thresholds (rule-based mock) ---
 const TH = {
