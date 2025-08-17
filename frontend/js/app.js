@@ -1,5 +1,13 @@
 
-// ====== CONFIG ======
+
+
+const meta = document.querySelector('meta[name="api-base"]');
+window.API_URL =
+  (new URLSearchParams(location.search).get('api')) ||  // optional override
+  (meta && meta.content) ||
+  'http://localhost:5174';
+
+  // ====== CONFIG ======
 window.API_URL = (new URLSearchParams(location.search).get('api')) || 'http://localhost:5174';
 
 // Simple GET helper
