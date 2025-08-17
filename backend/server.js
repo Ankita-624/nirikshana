@@ -11,17 +11,6 @@ app.use(cors({ origin: allow }));
 const httpServer = createServer(app);
 const io = new Server(httpServer, { cors: { origin: allow } });
 
-import { createServer } from "http";
-import { Server } from "socket.io";
-import fs from "fs";
-
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-const httpServer = createServer(app);
-const io = new Server(httpServer, { cors: { origin: "*" } });
-
 // --- thresholds (rule-based mock) ---
 const TH = {
   pH: { min: 6.5, max: 8.5 },
